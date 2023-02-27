@@ -1,0 +1,38 @@
+version: "3.3"
+services:
+  db:
+    image: postgres:11.10
+    volumes:
+      - ${PG_DIR_DATA:-postgres-storage}:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      db: { }
+    restart: "always"
+
+secrets:
+  db_password:
+    file: ${SECRETS_DB_PASSWORD_FILE:-./secrets/db_password.txt}
+  jwt_public_key:
+    file: ${SECRETS_JWT_PUBLIC_KEY_FILE:-./secrets/jwtRS256.key.pub}
+  jwt_private_key:
+    file: ${SECRETS_JWT_PRIVATE_KEY_FILE:-./secrets/jwtRS256.key}
+
+volumes:
+  postgres-storage: { }
+
+networks:
+  main:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.111.0.0/29
+          gateway: 10.111.0.1
+
+  db:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.111.0.8/29
+          gateway: 10.111.0.9
