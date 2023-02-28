@@ -19,6 +19,7 @@ docker/custom/*
 
 .node_repl_history
 .npm/
+package-lock.json
 
 ### OS
 .DS_Store

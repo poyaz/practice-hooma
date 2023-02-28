@@ -23,7 +23,27 @@ openssl rsa -in ./secrets/jwtRS256.key -pubout -outform PEM -out ./secrets/jwtRS
 cd practice-hooma-api-gateway
 cp env/gateway/.env.example env/gateway/.env
 
-### Change env
+### Change api-gateway env
+### You can use of any of editor like: vim, nano, etc
+vi env/gateway/.env
+
+###############################################3
+
+# practice-hooma-ms-auth project
+cd practice-hooma-ms-auth
+cp env/gateway/.env.example env/gateway/.env
+
+### Change auth microservice env
+### You can use of any of editor like: vim, nano, etc
+vi env/gateway/.env
+
+###############################################3
+
+# practice-hooma-ms-users project
+cd practice-hooma-ms-users
+cp env/gateway/.env.example env/gateway/.env
+
+### Change users microservice env
 ### You can use of any of editor like: vim, nano, etc
 vi env/gateway/.env
 
@@ -33,17 +53,43 @@ vi env/gateway/.env
 
 ```bash
 docker-compose \
-  -f docker-compose.yml \
-  -f practice-hooma-api-gateway/docker-compose.yml \
-  -f practice-hooma-api-gateway/docker/docker-compose.env-secret.yml \
+      -f docker-compose.yml \
+      -f docker/docker-compose.env-secret.yml \
+      \
+      -f practice-hooma-api-gateway/docker-compose.yml \
+      -f practice-hooma-api-gateway/docker/docker-compose.network.yml \
+      -f practice-hooma-api-gateway/docker/docker-compose.env-secret.yml \
+      \
+      -f practice-hooma-ms-auth/docker-compose.yml \
+      -f practice-hooma-ms-auth/docker/docker-compose.network.yml \
+      -f practice-hooma-ms-auth/docker/docker-compose.env-secret.yml \
+      \
+      -f practice-hooma-ms-users/docker-compose.yml \
+      -f practice-hooma-ms-users/docker/docker-compose.network.yml \
+      -f practice-hooma-ms-users/docker/docker-compose.env-secret.yml \
+  \
   up -d
 
 ### If you use your own env
 docker-compose \
   -f docker-compose.yml \
+  -f docker/docker-compose.env-secret.yml \
+  \
   -f practice-hooma-api-gateway/docker-compose.yml \
+  -f practice-hooma-api-gateway/docker/docker-compose.network.yml \
   -f practice-hooma-api-gateway/docker/docker-compose.env-secret.yml \
   -f practice-hooma-api-gateway/docker/docker-compose.env.yml \
+  \
+  -f practice-hooma-ms-auth/docker-compose.yml \
+  -f practice-hooma-ms-auth/docker/docker-compose.network.yml \
+  -f practice-hooma-ms-auth/docker/docker-compose.env-secret.yml \
+  -f practice-hooma-ms-auth/docker/docker-compose.env.yml \
+  \
+  -f practice-hooma-ms-users/docker-compose.yml \
+  -f practice-hooma-ms-users/docker/docker-compose.network.yml \
+  -f practice-hooma-ms-users/docker/docker-compose.env-secret.yml \
+  -f practice-hooma-ms-users/docker/docker-compose.env.yml \
+  \
   up -d
 
 ```
