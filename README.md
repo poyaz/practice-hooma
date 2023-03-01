@@ -69,11 +69,11 @@ docker-compose \
 └── README.md
 ```
 
-| Name                        | Default                      | Description                            |
-|-----------------------------|------------------------------|----------------------------------------|
-| HOOMA_API_GATEWAY_BASE_PATH | ./practice-hooma-api-gateway | نام کاربری برای اتصال به سرور ssh      |
-| HOOMA_MS_AUTH_BASE_PATH     | ./practice-hooma-ms-auth     | کلمه‌عبور کنونی برای اتصال به سرور ssh |
-| HOOMA_MS_USERS_BASE_PATH    | ./practice-hooma-ms-users    | کلمه‌عبور جدید برای قرار گرفتن در سرور |
+| Name                        | Default                      | Description                  |
+|-----------------------------|------------------------------|------------------------------|
+| HOOMA_API_GATEWAY_BASE_PATH | ./practice-hooma-api-gateway | آدرس پوشه سرویس gateway      |
+| HOOMA_MS_AUTH_BASE_PATH     | ./practice-hooma-ms-auth     | آدرس پوشه سرویس authenticate |
+| HOOMA_MS_USERS_BASE_PATH    | ./practice-hooma-ms-users    | آدرس پوشه سرویس users        |
 
 For example if your folder strutter like below:
 
