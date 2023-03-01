@@ -1,7 +1,8 @@
 Introduction
 ========
 
-This project is a practice for the "Hooma" company interview. This sample project have one gateway and two microservice and communicate with each other on GRPC protocol.
+This project is a practice for the "Hooma" company interview. This sample project have one gateway and two microservice
+and communicate with each other on GRPC protocol.
 
 Projects
 ========
@@ -14,6 +15,8 @@ Projects
 
 How to run
 ==========
+
+# With docker
 
 ## You need to run blow command for create secret
 
@@ -179,3 +182,13 @@ docker-compose \
   up -d
 
 ```
+
+# Without docker
+
+If you don't want run with docker, You have to install all package for each project and get build for them. After that
+you should use **env** for each project and start project for using;
+
+### Requirements
+
+* Node > 18
+* Postgresql > 11
