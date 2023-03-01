@@ -51,7 +51,7 @@ docker-compose \
       -f practice-hooma-ms-users/docker-compose.yml \
       -f practice-hooma-ms-users/docker/docker-compose.hooma.yml \
   \
-  up -d
+  up -d --build
 ```
 
 ### Run with docker in demo mode for the Hooma company (with different directory structure)
@@ -176,7 +176,7 @@ docker-compose \
   -f practice-hooma-ms-users/docker/docker-compose.env-secret.yml \
   -f practice-hooma-ms-users/docker/docker-compose.env.yml \
   \
-  up -d
+  up -d --build
 
 ```
 
