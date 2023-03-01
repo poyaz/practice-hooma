@@ -44,15 +44,12 @@ docker-compose \
       \
       -f practice-hooma-api-gateway/docker-compose.yml \
       -f practice-hooma-api-gateway/docker/docker-compose.hooma.yml \
-      -f practice-hooma-api-gateway/docker/docker-compose.env-secret.yml \
       \
       -f practice-hooma-ms-auth/docker-compose.yml \
       -f practice-hooma-ms-auth/docker/docker-compose.hooma.yml \
-      -f practice-hooma-ms-auth/docker/docker-compose.env-secret.yml \
       \
       -f practice-hooma-ms-users/docker-compose.yml \
       -f practice-hooma-ms-users/docker/docker-compose.hooma.yml \
-      -f practice-hooma-ms-users/docker/docker-compose.env-secret.yml \
   \
   up -d
 ```
